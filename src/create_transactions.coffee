@@ -1,3 +1,5 @@
+# Takes in a transaction-specification JSON file and outputs a
+# signed transactions JSON file suitable for passing to send_transactions.js.
 bitcoin = require 'bitcoin'
 config = require './config.json'
 fs = require 'fs'
@@ -32,7 +34,7 @@ privKeyCB, txnCB) ->
 # Was this called from the command line?
 if require.main == module
     # Were there enough arguments passed?
-    # Show useage information if not.
+    # Show usage information if not.
     if process.argv.length < 4
         console.log "Usage: node create_transactions.js <input file> <output file>"
     else
